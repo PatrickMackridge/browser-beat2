@@ -1,0 +1,87 @@
+html {
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(80, 10, 88, 1) 28%,
+    rgba(34, 7, 52, 1) 67%
+  );
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template:
+    [row1-start] "synthSeq drumSeq" 40% [row1-end]
+    [row2-start] "synthParams drumParams" 40% [row2-end]
+    [row3-start] "globalParams globalParams" 20% [row3-end]
+    / 1fr 1fr;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    180deg,
+    rgba(80, 10, 88, 1) 28%,
+    rgba(34, 7, 52, 1) 67%
+  );
+}
+
+.synthSeq {
+  grid-area: synthSeq;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.synthParams {
+  grid-area: synthParams;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.drumSeq {
+  grid-area: drumSeq;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drumParams {
+  grid-area: drumParams;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.globalParams {
+  grid-area: globalParams;
+  grid-column: 1 / span 2;
+  text-align: center;
+}
+
+p {
+  color: white;
+  margin: 0.5%;
+  justify-self: center;
+}
+
+.sequencer {
+  border-color: rgb(100, 100, 100);
+  border-style: outset;
+}
+
+.seqRowBass {
+  display: flex;
+}
+
+.seqRowDrums {
+  display: flex;
+}
+
+label {
+  font-size: 80%;
+  margin: 0.5%;
+}
+
+button {
+  justify-self: center;
+}

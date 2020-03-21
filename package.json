@@ -1,0 +1,18 @@
+{
+  "name": "BrowserBeat2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Tone.js",
+  "dependencies": {
+    "es-dev-server": "^1.44.0",
+    "tone": "^14.5.41"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "es-dev-server --app-index index.html --node-resolve --watch --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
