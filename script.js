@@ -22,9 +22,8 @@ dataBass.oscillator.type = waveType;
 const bassFilter = new Tone.Filter(1000, "lowpass", -24);
 const bassGain = new Tone.Gain(0.5);
 
-bassGain.toDestination();
-bassFilter.connect(bassGain);
 dataBass.connect(bassFilter);
+bassFilter.connect(bassGain);
 
 const bassNotes = ["A2", "G2", "E2", "D2", "C2", "A1"];
 
@@ -63,7 +62,8 @@ bassFilterRes.addEventListener("mousemove", () => {
 // DRUMS
 const drumRows = document.body.querySelectorAll(".seqRowDrums");
 const drumVol = document.body.querySelector(".drumVol");
-// Reverb and/or delay to drums?
+const verbMix = document.body.querySelector(".reverb");
+
 const browserBeat = new Tone.Sampler(
   {
     C1: "kick.mp3",
@@ -75,20 +75,16 @@ const browserBeat = new Tone.Sampler(
   },
   () => {
     console.log("Drums loaded");
-    browserBeat.triggerAttackRelease("C1", "4n");
-    browserBeat.triggerAttackRelease("D1", "4n");
-    browserBeat.triggerAttackRelease("D#1", "4n");
-    browserBeat.triggerAttackRelease("F#1", "4n");
-    browserBeat.triggerAttackRelease("A#1", "4n");
-    browserBeat.triggerAttackRelease("C2", "4n");
   },
   "drum_samples/"
 );
 
 const drumGain = new Tone.Gain(0.5);
+const drumVerb = new Tone.Reverb();
+drumVerb.wet.value = 0;
 
-drumGain.toDestination();
 browserBeat.connect(drumGain);
+drumGain.connect(drumVerb);
 
 const drumNotes = ["C2", "A#1", "F#1", "D#1", "D1", "C1"];
 
@@ -111,14 +107,28 @@ drumVol.addEventListener("mousemove", () => {
   drumGain.gain.value = drumVol.value / 100;
 });
 
+verbMix.addEventListener("mousemove", () => {
+  drumVerb.wet.value = verbMix.value / 100;
+  console.log(verbMix.value / 100);
+});
+
 // GLOBAL
 const playAll = document.querySelector(".playAll");
 const stopAll = document.querySelector(".stopAll");
 const masterVol = document.body.querySelector(".masterVol");
 const tempo = document.body.querySelector(".tempo");
 const swing = document.body.querySelector(".swing");
-// Global hipass (and/or lowpass/ bandpass?) filter?
+const hiPassFreq = document.body.querySelector(".hi-pass-freq");
 // Global pattern reset
+
+const hiPass = new Tone.Filter(0, "highpass", -12);
+const masterGain = new Tone.Gain(0.5);
+
+bassGain.connect(hiPass);
+drumVerb.connect(hiPass);
+hiPass.connect(masterGain);
+masterGain.toDestination();
+
 function runAll(time) {
   runBassSeq(time);
   runDrumSeq(time);
@@ -143,4 +153,12 @@ tempo.addEventListener("mousemove", () => {
 swing.addEventListener("mousemove", () => {
   Tone.Transport.swingSubdivision = "16n";
   Tone.Transport.swing = swing.value / 100;
+});
+
+hiPassFreq.addEventListener("mousemove", event => {
+  hiPass.frequency.value = event.target.value;
+});
+
+masterVol.addEventListener("mousemove", () => {
+  masterGain.gain.value = masterVol.value / 100;
 });
