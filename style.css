@@ -1,34 +1,48 @@
-html {
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(80, 10, 88, 1) 28%,
-    rgba(34, 7, 52, 1) 67%
-  );
-}
-
 body {
-  min-height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template:
-    [row1-start] "synthSeq drumSeq" 40% [row1-end]
-    [row2-start] "synthParams drumParams" 40% [row2-end]
-    [row3-start] "globalParams globalParams" 20% [row3-end]
+    [row1-start] ".            ." 10% [row1-end]
+    [row2-start] "synthSeq     drumSeq" 60% [row2-end]
+    [row3-start] "globalParams globalParams" 30% [row3-end]
     / 1fr 1fr;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background: linear-gradient(
-    180deg,
-    rgba(80, 10, 88, 1) 28%,
-    rgba(34, 7, 52, 1) 67%
-  );
+  font-family: Gill Sans, sans-serif;
+  background: url(./assets/Desk.jpg) top center repeat;
+  font-size: larger;
+}
+
+.synth-rack {
+  grid-area: synthSeq;
 }
 
 .synthSeq {
-  grid-area: synthSeq;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  background-color: silver;
+  border: 2px outset rgb(150, 150, 150);
+  margin: 1%;
+  text-align: center;
+  box-shadow: 0 0 5px 3px black;
+}
+
+.synthSeq p {
+  color: black;
+}
+
+.synth-controls {
+  color: black;
+  display: flex;
+  padding: 1%;
+  border-top: 1px solid black;
+  overflow-x: auto;
+}
+
+.seqRowBass {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid black;
+  position: relative;
+  background-color: rgb(210, 210, 210);
 }
 
 .synthParams {
@@ -38,11 +52,39 @@ body {
   text-align: center;
 }
 
-.drumSeq {
+.drum-rack {
   grid-area: drumSeq;
-  display: flex;
-  flex-direction: column;
+  padding-top: 2%;
+}
+
+.drumSeq {
   align-items: center;
+  background-color: black;
+  border: 2px outset silver;
+  margin: 1%;
+  text-align: center;
+  box-shadow: 0 0 5px 3px black;
+}
+
+.drumSeq p {
+  color: orange;
+}
+
+.drum-controls {
+  color: orange;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+  border-top: 1px solid silver;
+}
+
+.seqRowDrums {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px solid silver;
+  position: relative;
 }
 
 .drumParams {
@@ -52,29 +94,51 @@ body {
   text-align: center;
 }
 
-.globalParams {
-  grid-area: globalParams;
+.controller-rack {
   grid-column: 1 / span 2;
+  grid-area: globalParams;
+}
+
+.global-controls {
   text-align: center;
+  background-color: rgb(0, 76, 112);
+  border: 10px outset black;
+  color: whitesmoke;
+  padding: 1%;
+}
+
+.global-controls p {
+  padding-bottom: 2%;
+}
+
+.global-controls button {
+  background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+  background-color: #7892c2;
+  border-radius: 5px;
+  border: 1px solid #4e6096;
+  cursor: pointer;
+  color: whitesmoke;
+  padding: 4px 4px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #283966;
+  margin: 0 5px;
+}
+
+.global-controls button:active {
+  position: relative;
+  top: 1px;
+  background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+  background-color: #476e9e;
+}
+
+.global-controls label {
+  margin: 1% 0.5%;
 }
 
 p {
   color: white;
   margin: 0.5%;
   justify-self: center;
-}
-
-.sequencer {
-  border-color: rgb(100, 100, 100);
-  border-style: outset;
-}
-
-.seqRowBass {
-  display: flex;
-}
-
-.seqRowDrums {
-  display: flex;
 }
 
 label {

@@ -3,317 +3,329 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Browser Beat2</title>
+    <title>Browser Beat</title>
   </head>
   <link rel="stylesheet" href="style.css" />
   <script src="Tone.js"></script>
   <script type="module" src="script.js" defer></script>
   <body>
-    <div class="synthSeq">
-      <p>BASS CASE</p>
-      <br />
-      <div class="sequencer">
-        <div class="seqRowBass">
-          <p>6</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
+    <div class="synth-rack">
+      <div class="synthSeq">
+        <p class="bass-text">Data Bass</p>
+        <div class="sequencer">
+          <div class="seqRowBass">
+            <p>6</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowBass">
+            <p>5</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowBass">
+            <p>4</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowBass">
+            <p>3</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowBass">
+            <p>2</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowBass">
+            <p>1</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
         </div>
-        <div class="seqRowBass">
-          <p>5</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowBass">
-          <p>4</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowBass">
-          <p>3</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowBass">
-          <p>2</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowBass">
-          <p>1</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-      </div>
-    </div>
-    <div class="drumSeq">
-      <p>BROWSER BEATZ</p>
-      <br />
-      <div class="sequencer">
-        <div class="seqRowDrums">
-          <p>6</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowDrums">
-          <p>5</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowDrums">
-          <p>4</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowDrums">
-          <p>3</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowDrums">
-          <p>2</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-        </div>
-        <div class="seqRowDrums">
-          <p>1</p>
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
-          <input type="checkbox" />
+        <div class="synth-controls">
+          <label
+            >Wave Type:
+            <select class="waveSelect">
+              <option value="sine">Sine</option>
+              <option value="triangle">Triangle</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="square">Square</option>
+            </select>
+          </label>
+          <br />
+          <label
+            >Volume:
+            <input type="range" min="0" max="100" value="50" class="bassVol" />
+          </label>
+          <br />
+          <label display="inline"
+            >Filter:
+            <input
+              type="range"
+              min="50"
+              max="2000"
+              value="1025"
+              class="bassFilterFreq"
+            />
+          </label>
+          <label display="inline"
+            >Res:
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="bassFilterRes"
+            />
+          </label>
         </div>
       </div>
     </div>
-    <div class="synthParams">
-      <p>Synth Params</p>
-      <p />
-      <label
-        >Wave Type:
-        <select class="waveSelect">
-          <option value="sine">Sine</option>
-          <option value="triangle">Triangle</option>
-          <option value="sawtooth">Sawtooth</option>
-          <option value="square">Square</option>
-        </select>
-      </label>
-      <br />
-      <label
-        >Bass Vol:
-        <input type="range" min="0" max="100" value="50" class="bassVol" />
-      </label>
-      <br />
-      <label display="inline"
-        >Filter:
-        <input
-          type="range"
-          min="50"
-          max="2000"
-          value="1025"
-          class="bassFilterFreq"
-        />
-      </label>
-      <label display="inline"
-        >Res:
-        <input type="range" min="0" max="100" value="0" class="bassFilterRes" />
-      </label>
+    <div class="drum-rack">
+      <div class="drumSeq">
+        <p class="drum-text">Browser Beat</p>
+        <div class="sequencer">
+          <div class="seqRowDrums">
+            <p>6</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowDrums">
+            <p>5</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowDrums">
+            <p>4</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowDrums">
+            <p>3</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowDrums">
+            <p>2</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div class="seqRowDrums">
+            <p>1</p>
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+        </div>
+        <div class="drum-controls">
+          <label
+            >Volume:
+            <input type="range" min="0" max="100" value="50" class="drumVol" />
+          </label>
+          <label
+            >Reverb:
+            <input type="range" min="0" max="50" value="0" class="reverb" />
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="drumParams">
-      <p>Drum Params</p>
-      <p />
-      <label
-        >Drum Vol:
-        <input type="range" min="0" max="100" value="50" class="drumVol" />
-      </label>
-      <label
-        >Reverb:
-        <input type="range" min="0" max="50" value="0" class="reverb" />
-      </label>
-    </div>
-    <div class="globalParams">
-      <p>Global Params</p>
-      <p />
-      <button class="playAll">Play</button><button class="stopAll">Stop</button>
-      <label
-        >Tempo:
-        <input type="range" min="60" max="180" value="120" class="tempo" />
-      </label>
-      <label
-        >Swing:
-        <input type="range" min="0" max="50" value="0" class="swing" />
-      </label>
-      <label
-        >Hi-Pass:
-        <input type="range" min="0" max="2000" value="0" class="hi-pass-freq" />
-      </label>
-      <label
-        >Master Vol:
-        <input type="range" min="0" max="100" value="50" class="masterVol" />
-      </label>
+    <div class="controller-rack">
+      <div class="global-controls">
+        <p>Global Controller</p>
+        <button class="playAll">Play</button
+        ><button class="stopAll">Stop</button>
+        <label
+          >Tempo:
+          <input type="range" min="60" max="180" value="120" class="tempo" />
+        </label>
+        <label
+          >Swing:
+          <input type="range" min="0" max="50" value="0" class="swing" />
+        </label>
+        <label
+          >Hi-Pass:
+          <input
+            type="range"
+            min="0"
+            max="2000"
+            value="0"
+            class="hi-pass-freq"
+          />
+        </label>
+        <label
+          >Master Vol:
+          <input type="range" min="0" max="100" value="50" class="masterVol" />
+        </label>
+      </div>
     </div>
   </body>
 </html>
