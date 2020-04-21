@@ -70,8 +70,8 @@ const browserBeat = new Tone.Sampler(
     D1: "snare.wav",
     "D#1": "clap.mp3",
     "F#1": "closed_hat.mp3",
-    "A#1": "open_hat.wav",
-    C2: "cowbell.wav"
+    "A#1": "E808_OH-06.wav",
+    C2: "cowbell.wav",
   },
   () => {
     console.log("Drums loaded");
@@ -155,7 +155,7 @@ swing.addEventListener("mousemove", () => {
   Tone.Transport.swing = swing.value / 100;
 });
 
-hiPassFreq.addEventListener("mousemove", event => {
+hiPassFreq.addEventListener("mousemove", (event) => {
   hiPass.frequency.value = event.target.value;
 });
 
