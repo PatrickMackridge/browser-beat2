@@ -7,6 +7,7 @@ let waveType = waveSelect.options[waveSelect.selectedIndex].value;
 const bassVol = document.body.querySelector(".bassVol");
 const bassFilterFreq = document.body.querySelector(".bassFilterFreq");
 const bassFilterRes = document.body.querySelector(".bassFilterRes");
+const clearBass = document.body.querySelector(".clear-bass");
 
 document.documentElement.addEventListener("mousedown", () => {
   if (Tone.context.state !== "running") {
@@ -42,6 +43,10 @@ function runBassSeq(time) {
   bassIndex++;
 }
 
+clearBass.addEventListener("click", () => {
+  clearPattern(bassRows);
+});
+
 waveSelect.addEventListener("change", () => {
   waveType = waveSelect.options[waveSelect.selectedIndex].value;
   dataBass.oscillator.type = waveType;
@@ -63,6 +68,7 @@ bassFilterRes.addEventListener("mousemove", () => {
 const drumRows = document.body.querySelectorAll(".seqRowDrums");
 const drumVol = document.body.querySelector(".drumVol");
 const verbMix = document.body.querySelector(".reverb");
+const clearDrums = document.body.querySelector(".clear-drums");
 
 const browserBeat = new Tone.Sampler(
   {
@@ -112,6 +118,10 @@ verbMix.addEventListener("mousemove", () => {
   console.log(verbMix.value / 100);
 });
 
+clearDrums.addEventListener("click", () => {
+  clearPattern(drumRows);
+});
+
 // GLOBAL
 const playAll = document.querySelector(".playAll");
 const stopAll = document.querySelector(".stopAll");
@@ -119,7 +129,7 @@ const masterVol = document.body.querySelector(".masterVol");
 const tempo = document.body.querySelector(".tempo");
 const swing = document.body.querySelector(".swing");
 const hiPassFreq = document.body.querySelector(".hi-pass-freq");
-// Global pattern reset
+const clearAll = document.body.querySelector(".clear-all");
 
 const hiPass = new Tone.Filter(0, "highpass", -12);
 const masterGain = new Tone.Gain(0.5);
@@ -162,3 +172,20 @@ hiPassFreq.addEventListener("mousemove", (event) => {
 masterVol.addEventListener("mousemove", () => {
   masterGain.gain.value = masterVol.value / 100;
 });
+
+clearAll.addEventListener("click", () => {
+  clearPattern(bassRows);
+  clearPattern(drumRows);
+});
+
+const clearPattern = (sequencerRows) => {
+  sequencerRows.forEach((row) => {
+    const rowInputs = row.querySelectorAll("input");
+    for (let i = 0; i < rowInputs.length; i++) {
+      const input = rowInputs[i];
+      if (input.checked) {
+        input.checked = false;
+      }
+    }
+  });
+};

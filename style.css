@@ -52,7 +52,7 @@ body {
     rgb(150, 150, 150) 100%
   );
   border-radius: 5px;
-  border: 1px solid rgb(150, 150, 150);
+  border: 1px solid black;
   cursor: pointer;
 }
 
@@ -115,7 +115,7 @@ body {
   max-height: 25px;
   background: linear-gradient(to bottom, rgb(130, 130, 130) 5%, black 100%);
   border-radius: 5px;
-  border: 1px solid #707fac;
+  border: 1px solid rgb(130, 130, 130);
   cursor: pointer;
   color: orange;
 }
