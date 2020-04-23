@@ -1,5 +1,6 @@
 {
-  "name": "BrowserBeat2",
+  "name": "browser-beats",
+  "homepage": "https://patrickmackridge.github.io/browser-beats/",
   "version": "1.0.0",
   "description": "",
   "main": "Tone.js",
