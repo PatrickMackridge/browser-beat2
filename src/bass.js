@@ -1,5 +1,6 @@
 import * as Tone from "tone";
-import { clearPattern } from "./global";
+import { clearPattern } from "./utils";
+import "./style.css";
 
 const bassRows = document.body.querySelectorAll(".seqRowBass");
 const waveSelect = document.body.querySelector(".waveSelect");

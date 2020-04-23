@@ -1,6 +1,8 @@
 import * as Tone from "tone";
+import { clearPattern } from "./utils";
 import { resetBass, runBassSeq, bassGain, bassRows } from "./bass.js";
 import { resetDrums, runDrumSeq, drumVerb, drumRows } from "./drums.js";
+import "./style.css";
 
 document.documentElement.addEventListener("mousedown", () => {
   if (Tone.context.state !== "running") {
@@ -34,14 +36,13 @@ function runAll(time) {
 Tone.Transport.scheduleRepeat(runAll, "16n");
 
 playAll.addEventListener("click", () => {
-  resetBass();
-  resetDrums();
   Tone.Transport.start();
 });
 
 stopAll.addEventListener("click", () => {
   Tone.Transport.stop();
-  // Bass & Drum index to 0?
+  resetBass();
+  resetDrums();
 });
 
 tempo.addEventListener("mousemove", () => {
@@ -65,17 +66,3 @@ clearAll.addEventListener("click", () => {
   clearPattern(bassRows);
   clearPattern(drumRows);
 });
-
-const clearPattern = (sequencerRows) => {
-  sequencerRows.forEach((row) => {
-    const rowInputs = row.querySelectorAll("input");
-    for (let i = 0; i < rowInputs.length; i++) {
-      const input = rowInputs[i];
-      if (input.checked) {
-        input.checked = false;
-      }
-    }
-  });
-};
-
-export { clearPattern };

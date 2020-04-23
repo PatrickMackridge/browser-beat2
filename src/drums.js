@@ -1,5 +1,6 @@
 import * as Tone from "tone";
-import { clearPattern } from "./global";
+import { clearPattern } from "./utils";
+import "./style.css";
 
 const drumRows = document.body.querySelectorAll(".seqRowDrums");
 const drumVol = document.body.querySelector(".drumVol");
@@ -61,5 +62,4 @@ clearDrums.addEventListener("click", () => {
   clearPattern(drumRows);
 });
 
-// exportRunBassSeq
 export { resetDrums, runDrumSeq, drumVerb, drumRows };
