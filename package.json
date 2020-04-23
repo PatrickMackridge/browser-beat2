@@ -3,15 +3,27 @@
   "homepage": "https://patrickmackridge.github.io/browser-beats/",
   "version": "1.0.0",
   "description": "",
-  "main": "Tone.js",
+  "private": true,
   "dependencies": {
     "es-dev-server": "^1.44.0",
-    "tone": "^14.5.41"
+    "tone": "^14.6.1",
+    "webpack-dev-server": "^3.10.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.2",
+    "file-loader": "^6.0.0",
+    "gh-pages": "^2.2.0",
+    "style-loader": "^1.1.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "es-dev-server --app-index index.html --node-resolve --watch --open"
+    "start": "es-dev-server --app-index dist/index.html --node-resolve --watch --open",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
