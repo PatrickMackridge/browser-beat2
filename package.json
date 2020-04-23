@@ -22,7 +22,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "es-dev-server --app-index dist/index.html --node-resolve --watch --open",
+    "start": "es-dev-server --app-index docs/index.html --node-resolve --watch --open",
     "build": "webpack"
   },
   "keywords": [],

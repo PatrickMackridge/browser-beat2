@@ -3,14 +3,9 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: [
-    "./src/utils.js",
-    "./src/bass.js",
-    "./src/drums.js",
-    "./src/global.js",
-  ],
-  context: path.resolve(__dirname, "./"),
-  output: { path: path.resolve(__dirname, "dist"), filename: "bundle.js" },
+  context: path.resolve(__dirname, "src"),
+  entry: ["./utils.js", "./bass.js", "./drums.js", "./global.js"],
+  output: { path: path.resolve(__dirname, "docs"), filename: "bundle.js" },
   module: {
     rules: [
       {
