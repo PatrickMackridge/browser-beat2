@@ -1,5 +1,6 @@
 import * as Tone from "tone";
 import { clearPattern } from "./utils";
+import { electroKit } from "./kits";
 import "./style.css";
 
 const drumRows = document.body.querySelectorAll(".seqRowDrums");
@@ -7,20 +8,7 @@ const drumVol = document.body.querySelector(".drumVol");
 const verbMix = document.body.querySelector(".reverb");
 const clearDrums = document.body.querySelector(".clear-drums");
 
-const browserBeat = new Tone.Sampler(
-  {
-    C1: "kick.mp3",
-    D1: "snare.wav",
-    "D#1": "clap.mp3",
-    "F#1": "closed_hat.mp3",
-    "A#1": "E808_OH-06.wav",
-    C2: "cowbell.wav",
-  },
-  () => {
-    console.log("Drums loaded");
-  },
-  "../assets/drum_samples/"
-);
+const browserBeat = electroKit;
 
 const drumGain = new Tone.Gain(0.5);
 const drumVerb = new Tone.Reverb();

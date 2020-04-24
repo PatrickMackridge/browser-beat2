@@ -7,7 +7,7 @@ body {
     [row3-start] "globalParams globalParams" 30% [row3-end]
     / 1fr 1fr;
   font-family: Gill Sans, sans-serif;
-  background: url(../assets/Desk.jpg) top center repeat;
+  background: url(./assets/Desk.jpg) top center repeat;
   font-size: larger;
 }
 
