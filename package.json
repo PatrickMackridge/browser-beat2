@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "es-dev-server": "^1.44.0",
+    "serialize-javascript": "^5.0.1",
     "tone": "^14.6.1",
     "webpack-dev-server": "^3.10.3"
   },
