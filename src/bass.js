@@ -5,6 +5,8 @@ import "./style.css";
 const bassRows = document.body.querySelectorAll(".seqRowBass");
 const waveSelect = document.body.querySelector(".waveSelect");
 let waveType = waveSelect.options[waveSelect.selectedIndex].value;
+const keySelect = document.body.querySelector(".keySelect");
+let keyValue = waveSelect.options[keySelect.selectedIndex].value;
 const bassVol = document.body.querySelector(".bassVol");
 const bassFilterFreq = document.body.querySelector(".bassFilterFreq");
 const bassFilterRes = document.body.querySelector(".bassFilterRes");
@@ -19,7 +21,9 @@ const bassGain = new Tone.Gain(0.5);
 dataBass.connect(bassFilter);
 bassFilter.connect(bassGain);
 
-const bassNotes = ["A2", "G2", "E2", "D2", "C2", "A1"];
+const noteRef = {A : ["A2", "G2", "E2", "D2", "C2", "A1"], B: ["B2", "A2", "F#2", "E2", "D2", "B1"], C:["C3", "A#2", "G2", "F2", "D#2", "C2"], D:["D3", "C3", "A2", "G2", "F2", "D2"], E:["E3", "D3", "B2", "A2", "G2", "E2"], F:["F3", "D#3", "C3", "A#2", "G#2", "F2"], G:["G3", "F3", "D3", "C3", "A#2", "G2"]}
+
+let bassNotes = noteRef.A;
 
 let bassIndex = 0;
 
@@ -61,5 +65,9 @@ bassFilterRes.addEventListener("mousemove", () => {
   bassFilter.Q.value = bassFilterRes.value / 10;
 });
 
-// Export runBassSeq
+keySelect.addEventListener("change", () => {
+  keyValue = keySelect.options[keySelect.selectedIndex].value;
+  bassNotes = noteRef[keyValue];
+});
+
 export { resetBass, runBassSeq, bassGain, bassRows };
