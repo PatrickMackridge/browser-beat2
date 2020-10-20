@@ -182,6 +182,10 @@ body {
   margin: 1% 0.5%;
 }
 
+.playAll {
+  min-width: 50px;
+}
+
 p {
   color: white;
   margin: 0.5%;

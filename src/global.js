@@ -35,12 +35,33 @@ function runAll(time) {
 
 Tone.Transport.scheduleRepeat(runAll, "16n");
 
-playAll.addEventListener("click", () => {
-  Tone.Transport.start();
-});
+let isPlaying = false;
+
+const stopSeq = () => {
+  Tone.Transport.stop();
+  playAll.textContent = "Play";
+  isPlaying = false;
+}
+
+const playPause = () => {
+  if (!isPlaying) {
+    Tone.Transport.start();
+    isPlaying = true;
+    playAll.textContent = "Pause";
+  } else {
+    stopSeq();
+  }
+}
+
+playAll.addEventListener("click", playPause);
+document.addEventListener('keyup', (event) => {
+  if (event.code === "Space") {
+    playPause();
+  }
+})
 
 stopAll.addEventListener("click", () => {
-  Tone.Transport.stop();
+  stopSeq();
   resetBass();
   resetDrums();
 });
