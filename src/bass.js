@@ -6,7 +6,10 @@ const bassRows = document.body.querySelectorAll(".seqRowBass");
 const waveSelect = document.body.querySelector(".waveSelect");
 let waveType = waveSelect.options[waveSelect.selectedIndex].value;
 const keySelect = document.body.querySelector(".keySelect");
-let keyValue = waveSelect.options[keySelect.selectedIndex].value;
+let keyValue = keySelect.options[keySelect.selectedIndex].value;
+const scaleSelect = document.body.querySelector(".scaleSelect")
+let scaleValue = scaleSelect.options[scaleSelect.selectedIndex].value;
+
 const bassVol = document.body.querySelector(".bassVol");
 const bassFilterFreq = document.body.querySelector(".bassFilterFreq");
 const bassFilterRes = document.body.querySelector(".bassFilterRes");
@@ -21,9 +24,9 @@ const bassGain = new Tone.Gain(0.5);
 dataBass.connect(bassFilter);
 bassFilter.connect(bassGain);
 
-const noteRef = {A : ["A2", "G2", "E2", "D2", "C2", "A1"], B: ["B2", "A2", "F#2", "E2", "D2", "B1"], C:["C3", "A#2", "G2", "F2", "D#2", "C2"], D:["D3", "C3", "A2", "G2", "F2", "D2"], E:["E3", "D3", "B2", "A2", "G2", "E2"], F:["F3", "D#3", "C3", "A#2", "G#2", "F2"], G:["G3", "F3", "D3", "C3", "A#2", "G2"]}
+const noteRef = { minor: {A : ["A2", "G2", "E2", "D2", "C2", "A1"], B: ["B2", "A2", "F#2", "E2", "D2", "B1"], C:["C3", "A#2", "G2", "F2", "D#2", "C2"], D:["D3", "C3", "A2", "G2", "F2", "D2"], E:["E3", "D3", "B2", "A2", "G2", "E2"], F:["F3", "D#3", "C3", "A#2", "G#2", "F2"], G:["G3", "F3", "D3", "C3", "A#2", "G2"]}, major: {A : ["A2", "F#2", "E2", "C#2", "B1", "A1"], B: ["B2", "G#2", "F#2", "D#2", "C#2", "B1"], C:["C3", "A2", "G2", "E2", "D2", "C2"], D:["D3", "B2", "A2", "F#2", "E2", "D2"], E:["E3", "C#3", "B2", "G#2", "F#2", "E2"], F:["F3", "D3", "C3", "A2", "G2", "F2"], G:["G3", "E3", "D3", "B2", "A2", "G2"]} };
 
-let bassNotes = noteRef.A;
+let bassNotes = noteRef.minor.A;
 
 let bassIndex = 0;
 
@@ -67,7 +70,12 @@ bassFilterRes.addEventListener("mousemove", () => {
 
 keySelect.addEventListener("change", () => {
   keyValue = keySelect.options[keySelect.selectedIndex].value;
-  bassNotes = noteRef[keyValue];
+  bassNotes = noteRef[scaleValue][keyValue];
+});
+
+scaleSelect.addEventListener("change", () => {
+  scaleValue = scaleSelect.options[scaleSelect.selectedIndex].value;
+  bassNotes = noteRef[scaleValue][keyValue];
 });
 
 export { resetBass, runBassSeq, bassGain, bassRows };

@@ -150,7 +150,7 @@ body {
   background-color: rgb(0, 76, 112);
   border: 10px outset rgb(60, 10, 0);
   color: whitesmoke;
-  padding: 1%;
+  padding: 1% 0;
   box-shadow: 0 0 5px 3px black;
 }
 
