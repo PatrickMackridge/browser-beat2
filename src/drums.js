@@ -1,5 +1,4 @@
 import * as Tone from "tone";
-import { clearPattern } from "./utils";
 import { electroKit } from "./kits";
 import "./style.css";
 
@@ -38,6 +37,15 @@ function runDrumSeq(time) {
   drumIndex++;
 }
 
+const clearDrumPattern = () => {
+  drumRows.forEach((row) => {
+    const rowInputs = row.querySelectorAll("input");
+    rowInputs.forEach(input => {
+      input.checked = false;
+    })
+  });
+}
+
 drumVol.addEventListener("mousemove", () => {
   drumGain.gain.value = drumVol.value / 100;
 });
@@ -46,8 +54,9 @@ verbMix.addEventListener("mousemove", () => {
   drumVerb.wet.value = verbMix.value / 100;
 });
 
+
 clearDrums.addEventListener("click", () => {
-  clearPattern(drumRows);
+  clearDrumPattern();
 });
 
-export { resetDrums, runDrumSeq, drumVerb, drumRows };
+export { resetDrums, runDrumSeq, drumVerb, clearDrumPattern };

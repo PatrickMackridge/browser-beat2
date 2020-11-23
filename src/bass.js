@@ -1,5 +1,4 @@
 import * as Tone from "tone";
-import { clearPattern } from "./utils";
 import "./style.css";
 
 const bassRows = document.body.querySelectorAll(".seqRowBass");
@@ -47,8 +46,17 @@ function runBassSeq(time) {
   bassIndex++;
 }
 
+const clearBassPattern = () => {
+  bassRows.forEach((row) => {
+    const rowInputs = row.querySelectorAll("input");
+    rowInputs.forEach(input => {
+      input.checked = false;
+    })
+  });
+}
+
 clearBass.addEventListener("click", () => {
-  clearPattern(bassRows);
+  clearBassPattern();
 });
 
 waveSelect.addEventListener("change", () => {
@@ -78,4 +86,4 @@ scaleSelect.addEventListener("change", () => {
   bassNotes = noteRef[scaleValue][keyValue];
 });
 
-export { resetBass, runBassSeq, bassGain, bassRows };
+export { resetBass, runBassSeq, bassGain, clearBassPattern };

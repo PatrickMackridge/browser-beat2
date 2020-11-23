@@ -1,7 +1,6 @@
 import * as Tone from "tone";
-import { clearPattern } from "./utils";
-import { resetBass, runBassSeq, bassGain, bassRows } from "./bass.js";
-import { resetDrums, runDrumSeq, drumVerb, drumRows } from "./drums.js";
+import { resetBass, runBassSeq, bassGain, clearBassPattern } from "./bass.js";
+import { resetDrums, runDrumSeq, drumVerb, clearDrumPattern } from "./drums.js";
 import "./style.css";
 
 document.documentElement.addEventListener("mousedown", () => {
@@ -84,6 +83,6 @@ masterVol.addEventListener("mousemove", () => {
 });
 
 clearAll.addEventListener("click", () => {
-  clearPattern(bassRows);
-  clearPattern(drumRows);
+  clearBassPattern();
+  clearDrumPattern();
 });

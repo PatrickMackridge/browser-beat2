@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   mode: "production",
   context: path.resolve(__dirname, "src"),
-  entry: ["./utils.js", "./kits.js", "./bass.js", "./drums.js", "./global.js"],
+  entry: ["./kits.js", "./bass.js", "./drums.js", "./global.js"],
   output: { path: path.resolve(__dirname, "docs"), filename: "bundle.js" },
   module: {
     rules: [
